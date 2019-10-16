@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+    <title>Truck Load Unload</title>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="display-4 text-center">
+            <i class="fa fa-truck text-primary"></i>
+            My<span class="text-primary">Truck</span>Load
+        </h1>
+        <form id="pallet-form">
+            <div class="form-group">
+                <label for="id">Pallet Id</label>
+                <input type="text" id="id" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight</label>
+                <input type="text" id="weight" class="form-control">
+            </div>
+            <input type="submit" value="Add Pallet" class="btn btn-primary btn-block">
+        </form>
+        <div id="pallet-status" class="mt-4">
+            
+            <label id="pallet-count" for="pallet-count" class="border border-info p-2">Pallet Count: <span class="text-body"></span></label>
+            </label>
+            <label id="pallet-weight" for="pallet-weight" class="border border-info p-2">Pallet Weight: <span class="text-body"></span></label>
+
+            </label>
+        </div>
+        <table class="table table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Weight</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="pallet-list"></tbody>
+            </table>
+    </div>
+    <script src='app.js'></script>
+</body>
+</html>

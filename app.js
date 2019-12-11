@@ -7,12 +7,12 @@ class Pallet {
 
 const maxPalletCount = 5;
 const maxPalletWeight = 1000;
-var operator = "add";
+//var operator = "add";
 
 // function closure
 var totalPallets = (() => {
   var palletCounter = 0;
-  return () => {
+  return operator => {
     operator === "add" ? (palletCounter += 1) : (palletCounter -= 1);
     return palletCounter;
   };
@@ -30,8 +30,8 @@ class UITruck {
   static addPalletToList(pallet) {
     const list = document.querySelector("#pallet-list");
     const row = document.createElement("tr");
-    operator = "add";
-    let palletCount = totalPallets();
+    //operator = "add";
+    let palletCount = totalPallets("add");
     let palletWeight = UITruck.totalPalletWeight(pallet.weight, "add");
 
     row.classList.add("pallet-row");
@@ -66,8 +66,8 @@ class UITruck {
         elem.parentElement.previousElementSibling.textContent;
 
       document.querySelector(`.pallet-row[data-id="${id}"]`).remove();
-      operator = "subtract";
-      let palletCount = totalPallets();
+      //operator = "subtract";
+      let palletCount = totalPallets("subtract");
 
       let palletWeight = UITruck.totalPalletWeight(
         currentElemWeight,
